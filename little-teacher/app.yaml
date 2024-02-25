@@ -1,0 +1,18 @@
+services:
+  little-teacher:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      download-deepseek-coder-instruct-llm:
+        condition: service_started
+    environment:
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL}
+    # docker compose watch
+    develop:
+      watch:
+        - action: sync
+          path: app
+          target: app
+    ports:
+      - 8501:8501

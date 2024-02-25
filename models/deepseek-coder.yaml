@@ -1,0 +1,17 @@
+services:
+  download-deepseek-coder-llm:
+    image: curlimages/curl:8.6.0
+    entrypoint: ["curl", "${OLLAMA_BASE_URL}/api/pull", "-d", '{"name": "deepseek-coder"}']
+    environment:
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL}  
+    depends_on:
+      ollama-service:
+        condition: service_started
+  download-deepseek-coder-instruct-llm:
+    image: curlimages/curl:8.6.0
+    entrypoint: ["curl", "${OLLAMA_BASE_URL}/api/pull", "-d", '{"name": "deepseek-coder:instruct"}']
+    environment:
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL}  
+    depends_on:
+      ollama-service:
+        condition: service_started
