@@ -1,4 +1,4 @@
-# my-little-teacher
+# My Little Teacher
 
 ## How to use this demo
 
