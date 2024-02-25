@@ -4,4 +4,4 @@ include:
   # Download LLM
   - models/deepseek-coder.yaml
   # Start the GenAI application
-  - little-teacher/app.yaml
+  - little-teacher/teacher.yaml
