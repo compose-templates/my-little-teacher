@@ -14,6 +14,7 @@ docker compose --env-file .mac.env --file compose.mac.yaml watch
 > If you run Ollama into a container (without GPU):
 ```bash
 docker compose up
+# or:
 docker compose watch
 ```
 
